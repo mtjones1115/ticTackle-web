@@ -1,0 +1,14 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - tickTackle</title>
+        {% else %}
+        <title>Welcome to tickTackle</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>ticTackle: <a href="/home">Home</a></div>
+        {% block greeting %}{% endblock %}
+        {% block fixtures %}{% endblock %}
+    </body>
+</html>
