@@ -1,13 +1,9 @@
 from webapp import app
 from flask import render_template
 
+user = {'username' : 'Clarice'}
 
-@app.route('/')
-@app.route('/index')
-@app.route('/home')
-def index():
-    user = {'username' : 'Clarice'}
-    results = {
+results = {
     101: {
         'gameday': 'gameday1',
         'team1': {
@@ -31,5 +27,26 @@ def index():
         }
         },
     
-}
-    return render_template('index.html', title='Home', user=user, results=results)
+    }
+
+@app.context_processor
+def inject_user():
+    return dict(user=user['username'])
+
+@app.route('/fixture_list')
+def fixtures():
+    
+    return render_template('fixture_list.html', title='Fixtures', results=results)
+
+@app.route('/')
+@app.route('/index')
+@app.route('/home')
+def index():
+    
+    message = "This is still clearly underconstruction"
+    matches=fixtures()
+    
+    return render_template('index.html', title='Home', message=message, results=results)
+
+
+

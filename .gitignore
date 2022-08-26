@@ -6,6 +6,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+webapp/__pycache--/
+webapp/scratch.py
+
 
 # C extensions
 *.so

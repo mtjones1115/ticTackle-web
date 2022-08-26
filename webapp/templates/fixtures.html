@@ -1,0 +1,8 @@
+
+{% block fixtures %}
+<table id="fixtures">
+{% for match,stats in results.items() %}
+    <tr><td>{{ stats.gameday }} | {{ stats.team1.name }} : {{ stats.team1.goals }} - {{ stats.team2.goals }} : {{ stats.team2.name }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

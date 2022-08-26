@@ -7,8 +7,10 @@
         {% endif %}
     </head>
     <body>
-        <div>ticTackle: <a href="/home">Home</a></div>
-        {% block greeting %}{% endblock %}
-        {% block fixtures %}{% endblock %}
+        {% block header %}
+        <div>Hello {{ user }} | ticTackle: <a href="/home">Home</a></div>
+        {% endblock %}
+        {% block content %}{% endblock %}
+        
     </body>
 </html>

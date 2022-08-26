@@ -4,10 +4,10 @@
 <h2>Hello, {{ user.username }}</h2>
 {% endblock %}
 
-{% block fixtures %}
-<table id="fixtures">
-{% for match,stats in results.items() %}
-    <tr><td>{{ stats.gameday }} | {{ stats.team1.name }} : {{ stats.team1.goals }} - {{ stats.team2.goals }} : {{ stats.team2.name }}</td></tr>
-{% endfor %}
-</table>
+{% block content %}<p> {{ message }} </p>
+
+{% include 'fixtures.html' %}
+
 {% endblock %}
+
+
