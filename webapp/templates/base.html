@@ -8,8 +8,17 @@
     </head>
     <body>
         {% block header %}
-        <div>Hello {{ user }} | ticTackle: <a href="/home">Home</a></div>
+        <div>Hello {{ user }} <a href="login">Log In</a> | <a href="/home">Home</a> <a href="/fixture_list">Fixture List</a></div>
         {% endblock %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
         {% block content %}{% endblock %}
         
     </body>
